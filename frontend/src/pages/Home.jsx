@@ -4,8 +4,12 @@ import Navbar from '../components/Navbar'
 const Home = () => {
   return (
     <>
-        <Navbar/>
-        <div>Home</div>
+      <Navbar/>
+          <div>
+            Home
+          </div>
+
+
 
 
     </>
