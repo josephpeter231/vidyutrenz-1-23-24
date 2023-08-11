@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Navbar/>
-          <div>
+          <div className='bg-red-600' >
             Home
           </div>
 
