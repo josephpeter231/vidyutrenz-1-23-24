@@ -4,10 +4,11 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
 import ContactUs from './pages/ContactUs';
+import './App.css'
 
 function App() {
   return (
-    <>
+    <div className='app'>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -16,7 +17,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs/>} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
