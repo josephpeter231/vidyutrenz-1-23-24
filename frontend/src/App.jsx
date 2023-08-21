@@ -1,5 +1,6 @@
 import './index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TechnicalEvents from './components/TechEvents';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Events from './pages/Events';
@@ -17,6 +18,7 @@ function App() {
           <Route path="/contactus" element={<ContactUs/>} />
         </Routes>
       </Router>
+      <TechnicalEvents/>
     </div>
   );
 }

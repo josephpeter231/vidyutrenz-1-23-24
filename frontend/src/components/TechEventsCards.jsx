@@ -1,13 +1,13 @@
-import React from 'react'
+// import TechnicalEvents from "./TechEvents";
 
-const TechEventsCards = ({event}) => {
-  return (
-    <div className='w-10 h-[10rem] bg-red-600' >
-        <h2 className='bg-red-500' >{event.name}</h2>
-        <img src={event.imgUrl} alt={event.title}  />
-        <p>{event.description}</p>
-    </div>
-  )
-}
+// const TechEventsCards = ({TechnicalEvents}) => {
+//   return (
+//     <div className='w-10 h-[10rem] bg-red-600' >
+//         <h2 className='bg-red-500' >{TechnicalEvents.name}</h2>
+//         <img src={TechnicalEvents.imgUrl} alt={TechnicalEvents.title}  />
+//         <p>{TechnicalEvents.description}</p>
+//     </div>
+//   )
+// }
 
-export default TechEventsCards
+// export default TechEventsCards
