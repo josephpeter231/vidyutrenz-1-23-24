@@ -1,3 +1,41 @@
-.app{
+
+/* .app{
     background-color: #1c1917;
+} */
+
+@font-face {
+    font-family: 'Against'; /* Replace with your desired font name */
+    src: url('../src/assets/fonts/against.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+.app{
+    font-family: Against;
 }
+
+
+.stroke-text {
+    color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+  
+  .imgcolor {
+    filter: grayscale(100%);
+    transition: 0.5s;
+  }
+  
+  
+  .imgcolor:hover {
+    filter: grayscale(0%);
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+  

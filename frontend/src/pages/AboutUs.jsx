@@ -1,8 +1,9 @@
-
+import Aboutus1 from "../components/About"
 
 const AboutUs = () => {
   return (
-    <div>About Vidyutrenz</div>
+    
+    <Aboutus1/>
   )
 }
 
