@@ -1,7 +1,13 @@
 // import Carousel from 'react-spring-3d-carousel';
+import React from "react";
+import { useState } from 'react'
+import { Dialog } from '@headlessui/react'
+import {useNavigate} from 'react-router-dom'
+
 
 const Techs = [
   {
+    id:1,
     name: "EUREKATHON",
     description: "A paper presentation event, where students from various colleges gather to present their research papers before the judges.",
     rules: [
@@ -10,9 +16,11 @@ const Techs = [
       "It is required to send a soft copy of the presentation while registering.",
       "Each team will have a maximum time constraint of 5 to 8 minutes.",
       "Finality will be accorded to the jury's judgement."
-    ]
+    ],
+    imgUrl: "https://res.cloudinary.com/e-compractice/image/upload/v1691301921/lumos/Career1_c6qalm.svg"
   },
   {
+    id:2,
     name: "ELECTROMAZE",
     description: "ELECTROMAZE is a circuit redesigning event. Circuit diagram will be displayed once and participants have to redesign it within a stipulated time.",
     rules: [
@@ -25,9 +33,11 @@ const Techs = [
       "Round 1: In the preliminary round, the participants are asked to redesign a circuit by picking a circuit from the bunch of circuits displayed.",
       "Round 2: Participants shortlisted from round 1 are allowed for round 2 where they will be given a much more complicated circuit to redesign."
     ],
-    judgingCriteria: "Participants who can design a circuit faster and with accuracy of circuits can be considered as a winner."
+    judgingCriteria: "Participants who can design a circuit faster and with accuracy of circuits can be considered as a winner.",
+    imgUrl: "https://res.cloudinary.com/e-compractice/image/upload/v1691301921/lumos/Career1_c6qalm.svg"
   },
   {
+    id:3,
     name: "DEBUGCON",
     description: "It is a two members circuit debugging game in which a defective circuit will be given and the game is to find the defect and make the circuit work in the given time by the team mates.",
     rules: [
@@ -37,9 +47,11 @@ const Techs = [
       "Round 1 will be with moderate difficulty and round 2 has some twists in the circuit.",
       "Teams performing well and scoring points can go to the next level."
     ],
-    judgingCriteria: "Teams find the defect in a short span of time will be given maximum marks and teams completing further will be given some minimum marks. At the end, teams having the maximum score will be considered as winners."
+    judgingCriteria: "Teams find the defect in a short span of time will be given maximum marks and teams completing further will be given some minimum marks. At the end, teams having the maximum score will be considered as winners.",
+    imgUrl: "https://res.cloudinary.com/e-compractice/image/upload/v1691301921/lumos/Career1_c6qalm.svg"
   },
   {
+    id:4,
     name: "THEATROTECH",
     description: "A two members word-guessing event meant to identify the words related to electronics and communication. Each participant from a team will be given a clue card with few words written on it. The task is to find the correct word using that clue card.",
     rules: [
@@ -52,6 +64,7 @@ const Techs = [
     judgingCriteria: "The team which finds the correct answer within a short span of time will be awarded with points. At last, the team with more points will be considered as winners."
   },
   {
+    id:5,
     name: "INNOVESTA",
     description: "Innovesta is a project presentation event where participants can display their work. Typically, the event consists of a number of presentations, with each presenter exhibiting their work and outlining their objectives, processes, and outcomes.",
     rules: [
@@ -66,31 +79,64 @@ const Techs = [
   }
 ];
 
-const TechnicalEvents = () => {
+const TechEvents = () => {
+  const router = useNavigate();
+  let [selectedTech, setSelectedTech] = useState(null)
+
+  const openModal = (tech) => {
+    setSelectedTech(tech)
+  }
+
+  const closeModal = () => {
+    setSelectedTech(null)
+  }
   return (
     <>
-       <div className="tech-events">
+    <h1 className="text-white bg-[#e5be9e] mx-auto">TECHNICAL EVENTS</h1>
+    <div className="tech-events grid grid-cols-1 md:grid-cols-3 gap-4">
       {Techs.map((Tech, index) => (
-        
-        <div key={index} className='w-10 h-[10rem] bg-red-600'>
-          <h2 className='bg-red-500'>{Tech.name}</h2>
-          {Tech.imgUrl && <img src={Tech.imgUrl} alt={Tech.name} />}
-          <p>{Tech.description}</p>
-          {Tech.rules && (
-            <div className="rules">
-              <h3>Rules:</h3>
-              <ul>
-                {Tech.rules.map((rule, ruleIndex) => (
-                  <li key={ruleIndex}>{rule}</li>
-                ))}
-              </ul>
+        <div key={index} className='bg-gray p-4'>
+          {Tech.imgUrl && (
+            <div className="h-[70%] bg-cover bg-center" style={{backgroundImage:`url(${Tech.imgURL})`}}>
+              {/* <img src={Tech.imgUrl} alt={Tech.name} className="h-full w-full object-cover" /> */}
             </div>
           )}
+          <div className="py-4">
+            <h3 className="text-lg font-semibold mb-2">{Tech.name}</h3>
+            <button onClick={() => router(`/events/${Tech.id}`)}>Register</button>
+          </div>
         </div>
       ))}
+      {selectedTech && (
+        <Dialog open={selectedTech !== null} onClose={closeModal}>
+          <Dialog.Panel>
+            <Dialog.Title>{selectedTech.name}</Dialog.Title>
+            {selectedTech.imgUrl && (
+              <div className="h-[70%]">
+                <img src={selectedTech.imgUrl} alt={selectedTech.name} className="h-full w-full object-cover" />
+              </div>
+            )}
+            <div className="py-4">
+              <h3 className="text-lg font-semibold mb-2">{selectedTech.name}</h3>
+              <p className="text-gray-800">{selectedTech.description}</p>
+              {selectedTech.rules && (
+                <div className="py-2">
+                  <h4 className="text-sm font-semibold">Rules:</h4>
+                  <ul className="list-disc list-inside">
+                    {selectedTech.rules.map((rule, ruleIndex) => (
+                      <li key={ruleIndex} className="text-gray-700">{rule}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <button onClick={closeModal}>Close</button>
+          </Dialog.Panel>
+        </Dialog>
+      )}
     </div>
     </>
   );
 };
 
-export default TechnicalEvents;
+export default TechEvents;

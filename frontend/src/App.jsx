@@ -10,7 +10,7 @@ import './App.css'
 function App() {
 
   return (
-    <div className='app flex-row bg-cover bg-center'>
+    <div className='app flex-row bg-cover bg-center' >
       
           <Router>
             <Routes>

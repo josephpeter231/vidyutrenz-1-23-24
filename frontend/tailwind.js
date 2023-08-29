@@ -8,6 +8,11 @@ export default {
       ...theme('colors'),
       auto: 'auto',
     }),
+    extend: {
+      textColor: {
+        'custom-gray': '#808080',
+      }
+    },
     animation: {
       none: 'none',
       spin: 'spin 1s linear infinite',

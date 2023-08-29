@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AboutusData } from '../data/AboutusData';
 import rightArrow from '../assets/rightArrow.png';
+import leftArrow from "../assets/leftArrow.png";
 import { motion } from 'framer-motion';
 
 
@@ -14,7 +15,7 @@ const Aboutus1 = () => {
       {/* <video autoPlay loop muted> */}
         {/* <source src={bgvideo} type="video/mp4" /> */}
       {/* </video> */}
-    <div className="flex flex-col h-screen gap-24 p-2 overflow-hidden bg-black md:p-4 lg:p-8">
+    <div className="flex flex-col h-screen gap-24 p-2 overflow-hidden bg-transperant md:p-4 lg:p-8">
       
       <div className="flex flex-col gap-4 p-10 lg:flex-row bg-blur">
         <div className="flex flex-col flex-1 text-white">
@@ -70,7 +71,7 @@ const Aboutus1 = () => {
             initial={{ opacity: 0, x: -100 }}
             transition={{ ...transition, duration: 2 }}
             animate={{ opacity: 1, x: 0 }}
-            className="absolute h-48 bg-transparent border-2 border-white w-44 lg:h-96 lg:w-80 md:h-44 md:w-40 right-14 top-2"
+            className="absolute h-20 bg-transparent border-2 border-white w-44 lg:h-96 lg:w-80 md:h-44 md:w-40 right-14 top-2"
           ></motion.div>
 
           <motion.div
