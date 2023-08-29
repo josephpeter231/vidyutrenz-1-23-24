@@ -3,6 +3,7 @@ import { AboutusData } from '../data/AboutusData';
 import rightArrow from '../assets/rightArrow.png';
 import { motion } from 'framer-motion';
 
+
 const Aboutus1 = () => {
   const transition = { type: 'spring', duration: 3 };
   const [selected, setSelected] = useState(0);

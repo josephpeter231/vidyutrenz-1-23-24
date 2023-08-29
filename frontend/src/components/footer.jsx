@@ -3,7 +3,7 @@ import { FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="w-screen inline-flex flex-row justify-between blur-3xl mt-40 bg-transparent text-white text-center py-4 md:flex-shrink">
+    <footer className="w-screen inline-flex flex-row justify-between blur-3xl mt-64 bg-transparent text-white text-center py-4 md:flex-shrink">
      
             <div className="md:flex px-8 pt-24 flex justify-start space-x-10">
                 <a  href="https://www.facebook.com/" className=" text-xl">
