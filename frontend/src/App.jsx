@@ -7,11 +7,11 @@ import Events from './pages/Events';
 import ContactUs from './pages/ContactUs';
 import './App.css'
 
+
 function App() {
 
   return (
-    <div className='app flex-row bg-cover bg-center'>
-      
+    <div className=' flex-row bg-cover bg-center'>
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />

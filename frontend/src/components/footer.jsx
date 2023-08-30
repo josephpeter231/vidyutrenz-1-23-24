@@ -1,11 +1,11 @@
-import React from 'react';
-import { FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa';
+
+import { FaYoutube, FaTwitter, FaInstagram ,FaLinkedinIn} from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="w-screen inline-flex flex-row justify-between blur-3xl mt-64 bg-transparent text-white text-center py-4 md:flex-shrink">
+    <footer className="fixed bottom-0 w-screen items-center flex flex-col blur-3xl bg-transparent text-white text-center py-4 md:flex-row  space-x-9 ">
      
-            <div className="md:flex px-8 pt-24 flex justify-start space-x-10">
+            <div className=" md:flex px-8  flex  space-x-10">
                 <a  href="https://www.facebook.com/" className=" text-xl">
                 <FaYoutube />
                 </a>
@@ -15,12 +15,15 @@ const Footer = () => {
                 <a href="https://www.instagram.com/" className="text-xl">
                 <FaInstagram />
                 </a>
+                <a href="https://www.instagram.com/" className="text-xl">
+                <FaLinkedinIn />
+                </a>
             </div>
-            <div className='md:flex mx-10 text-xs'>
-                    <p className='mx-10 mt-24'>&copy; Copyright 2023</p>
+            <div className='md: mx-10 text-xs'>
+                    <p className='mt-4 md:mx-10 '>&copy; Copyright 2023</p>
             </div>
-            <div className="md:flex text-xs">
-                    <p className='mt-24'>Chennai Institute of Technology</p>
+            <div className="md: text-xs">
+                    <p className='mt-4'>Chennai Institute of Technology</p>
             </div>
             
       

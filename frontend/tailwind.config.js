@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      blur: {
+        xs: '2px',
+      },
+      backgroundColor: {
+        'black': '#21130d', // Replace with your desired color code
+    }
+    
       
     },
   },

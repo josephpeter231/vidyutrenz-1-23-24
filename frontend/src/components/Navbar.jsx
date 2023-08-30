@@ -1,6 +1,7 @@
 import  { useState } from 'react';
 import { motion } from 'framer-motion';
-import {FaBeer}  from 'react-icons/fa';
+import {FaBeer}  from 'react-icons/fa'
+
 import white_logo_pngg from '../assets/white_logo_pngg.png'
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +70,7 @@ const Home = () => {
         
       </div>
       {isOpen && (
-        <div className="fixed top-0 right-0 h-full p-4 w-64 bg-gray-700 transition-transform transform translate-x-0 md:hidden">
+        <div className="fixed top-0 right-0 h-full p-4 w-64 bg-black transition-transform transform translate-x-0 md:hidden">
           <div className="font-bold text-center flex flex-col space-y-4 ">
           <motion.div className='object-cover text-white'
           initial={{ opacity: 0, y: 100 }} 
